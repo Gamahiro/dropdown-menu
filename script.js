@@ -1,27 +1,39 @@
-const dropdownBtn = document.querySelectorAll('#menuContainer');
+const dropdownBtn = document.querySelector('#menuContainer');
 
 
 
-dropdownBtn.forEach((e, i) => {
-    console.log(e.childNodes);
-    console.log(e.firstElementChild)
+for (let index = 0; index < dropdownBtn.childElementCount; index++) {
+    console.log(dropdownBtn[index])
 
-
-    e.childNodes.forEach((e) => {
-        console.log(e.childNodes);
-        e.addEventListener('click', dropdownToggle(e));
-    })
-    
-});
-
-function dropdownToggle (toggleElement) {
-    console.log(toggleElement)
-    toggleElement.forEach((e) => {
-        console.log(e);
-        e.style.visibility = 'visible';
-
-    })
-
-    console.log('clicked');
+    dropdownBtn[index].addEventListener('click', () => {
+        dropdownToggle(e);
+    });
 }
 
+
+/*     console.log(dropdownBtn.children[0]);
+   dropdownToggle(dropdownBtn.children[0]); */
+
+
+   //takes 
+function dropdownToggle(toggleElement) {
+
+    for (let i = 0; i < toggleElement.childElementCount - 1; i++) {
+        let toggleElementChild = document.querySelectorAll(`#${toggleElement.children[i].id} > div`);
+
+        toggleElementChild.forEach((e, i) => {
+            console.log(e)
+            if(e.style.visibility !== 'visible') {
+                e.style.visibility = 'visible';
+                console.log('visible');
+            }
+            else {
+                e.style.visibility = 'hidden';
+                console.log('hidden');
+            }
+        });
+    }
+}
+
+
+//click menubutton(eventlistener) => menubutton.children = style.visibility = 'visible'
