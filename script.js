@@ -3,35 +3,32 @@ const dropdownBtn = document.querySelector('#menuContainer');
 
 
 for (let index = 0; index < dropdownBtn.childElementCount; index++) {
-    console.log(dropdownBtn[index])
 
-    dropdownBtn[index].addEventListener('click', () => {
-        dropdownToggle(e);
+    dropdownBtn.children[index].addEventListener('click', () => {
+        dropdownToggle(dropdownBtn.children[index]);
     });
 }
 
+document.querySelector('#menuBtn3').addEventListener('click', (e) => {
+    //prevents child elements to trigger this event
+    if(e.target !== e.currentTarget) {
+        return;
+    }
 
-/*     console.log(dropdownBtn.children[0]);
-   dropdownToggle(dropdownBtn.children[0]); */
+    dropdownToggle(document.querySelector('#menuBtn3'));
+});
 
-
-   //takes 
+   //takes an argument DOM element and sets visibility to visible if hidden, else hidden
+   //element should have visibility set to hidden as default
 function dropdownToggle(toggleElement) {
-
-    for (let i = 0; i < toggleElement.childElementCount - 1; i++) {
-        let toggleElementChild = document.querySelectorAll(`#${toggleElement.children[i].id} > div`);
-
-        toggleElementChild.forEach((e, i) => {
-            console.log(e)
-            if(e.style.visibility !== 'visible') {
-                e.style.visibility = 'visible';
+    for (let i = 0; i < toggleElement.childElementCount; i++) {
+            if(toggleElement.children[i].style.visibility !== 'visible') {
+                toggleElement.children[i].style.visibility = 'visible';
                 console.log('visible');
-            }
-            else {
-                e.style.visibility = 'hidden';
+            }else {
+                toggleElement.children[i].style.visibility = 'hidden';
                 console.log('hidden');
             }
-        });
     }
 }
 

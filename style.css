@@ -10,12 +10,30 @@ body {
     justify-content: space-around;
 }
 
-#menuBtn > div {
+.menuBtn {
+    background-color: black;
+    border: 2px solid aliceblue;
+    border-radius: 3px;
+    padding: 1px;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.menuBtn:active {
+    background-color: rgb(32, 32, 32);
+}
+
+#menuBtn1 > div {
     position: relative;
     visibility: hidden;
 }
 
 #menuBtn2 > div {
     position: relative;
+    visibility: hidden;
+}
+
+#menuBtn3 > div {
     visibility: hidden;
 }
