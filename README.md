@@ -11,7 +11,7 @@ and toggles the display style between 'block' and 'none' on another DOM element
     This should contain the button and another container for all the dropdown elements.
     Give the menuBtn and dropdown elements container a unique identifier.
 
- <div class="menuContainer">
+``` <div class="menuContainer">
     <div class="menuBtn" id="menuBtn"> Button </div>
     <div id="dropdownElements">
         <div class="menuBtn" id="item1">item 1</div>
@@ -20,21 +20,21 @@ and toggles the display style between 'block' and 'none' on another DOM element
         <div class="menuBtn" id="item4">item 4</div>
     </div>
     </div>
-
+```
     CSS
 2. Give the dropdownElements a display of 'none' to default to a hidden state, 
     and a position of absolute to make the other DOM elements stay in place when display is 'block'. 
     
-#dropdownElements {
+```#dropdownElements {
     display: none;
     position: absolute;
 }
-
+```
     Javascript
 3. Import 'createDropDownMenu' to your script.
     Call 'createDropDownMenu (btn, menuContainer)'
 
-createDropDownMenu (document.querySelector('#menuBtn'), document.querySelector('#dropdownElements'));
-
+```createDropDownMenu (document.querySelector('#menuBtn'), document.querySelector('#dropdownElements'));
+```
 # For help with importing modules
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
