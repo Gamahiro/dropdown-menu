@@ -8,6 +8,9 @@ body {
     margin-right: auto;
     display: flex;
     justify-content: space-around;
+    user-select: none;
+    padding: 10px;
+    background-color: wheat;
 } 
 
 .menuBtn {
@@ -18,26 +21,23 @@ body {
     text-align: center;
     margin-top: 5px;
     cursor: pointer;
-    width: 70px;
 }
 
-.menuBtn:active {
-    background-color: rgb(32, 32, 32);
+.menuBtn:hover {
+    background-color: rgb(51, 45, 45);
 }
 
-#menuContainer1 {
+#menuContainer1, #menuContainer2, #menuContainer3 {
     display: none;
     position: absolute;
-    padding: 2px;
     border: 2px white solid;
+    padding: 6px;
+    border-radius: 3px;
     border-top: none;
+    width: 94px;
+    background-color: rgb(71, 71, 71);
 }
 
-#menuContainer2 {
-    display: none;
-    position: absolute;
-}
-#menuContainer3 {
-    display: none;
-    position: absolute;
+.topMenuBtn {
+    width: 110px;
 }
