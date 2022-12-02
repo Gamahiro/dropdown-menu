@@ -32,7 +32,7 @@ and toggles the display style between 'block' and 'none' on another DOM element
 ```
     Javascript
 3. Import 'createDropDownMenu' to your script.
-    Call 'createDropDownMenu (btn, menuContainer)'
+    Call 'createDropDownMenu (btn, dropdownElements)'
 
 ```createDropDownMenu (document.querySelector('#menuBtn'), document.querySelector('#dropdownElements'));
 ```
